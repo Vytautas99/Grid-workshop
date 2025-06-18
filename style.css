@@ -6,9 +6,12 @@ box-sizing: border-box;
 }
 
 body {
-    background-color: #333;
-    color: gold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #333;
+    background-image: url("./img/tile_200x200_1750238679613.png");
+    background-position: center;
+    background-attachment: fixed;
+    color: gold;
 
     overflow-x: hidden;
 
@@ -270,3 +273,52 @@ footer {
     }
 }
 
+/* Cards */
+
+.card {
+            position: relative;
+            perspective: 500px;
+            background-color: transparent ;
+        }
+        .side {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: all 400ms ease-in;
+            
+        }
+        .front {
+            background-color: #444;
+            transform: rotateY(0);
+        }
+        .back {
+            background-color: royalblue;
+            transform: rotateY(-180deg);
+            background-image: url("img/8ab18953849c1449233b4a45c7.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+        }
+
+        .card:hover .front {
+            transform: rotateY(-180deg);
+        }
+        .card:hover .back {
+            transform: rotateY(-360deg);
+        }
+
+        /* frosted glass */
+
+        .section-4 {
+            background-color: transparent;
+            backdrop-filter: blur(5px) brightness(80%) ;
+            border-radius: 10px;
+            color: white;
+
+        }
